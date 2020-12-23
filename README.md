@@ -95,6 +95,31 @@ Simply switch on SC1000 with a valid USB stick in, and after a few seconds it wi
 
 Note that you shouldn't touch the jog wheel while you are turning the device on - this is because the SC1000 does a short calibration routine. Leave it a few seconds before touching it.
 
+### More ###
+
+**update firmware**: hold down beat select up (or both) during boot
+
+**tell firmware version**:
+* turn beat volume up, sample volume down
+* hold down sample select up (or both) during boot
+* cancel with beat select button
+
+**pitch**:
+* press both buttons (up&down)
+* then use jog wheel to pitch
+* press any select button to finish
+
+**random selection**: hold both buttons at same time for ~1s
+
+**recording**:
+* press all 4 select buttons, wait for single beep
+* to stop: hold all 4 again, wait for several beeps (you NEED to stop before shutdown)
+
+
+## Optional Mods ##
+
+* [LED mod](./mods/led_ring/README.md)
+
 
 ## License ##
 

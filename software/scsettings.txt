@@ -173,3 +173,14 @@ io=15,1,1,CH1_CUE
 
 # Fader is assigned to sample pitch
 #midii=11,0,0,CH1_PITCH
+
+
+
+######################
+# LED mod (optional) #
+######################
+#
+# See.. @TODO
+
+# 1 to enable LED mod, default 0 (disabled)
+ledmodenabled=1

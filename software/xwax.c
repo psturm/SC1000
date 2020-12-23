@@ -47,6 +47,7 @@
 #include "sc_input.h"
 #include "sc_midimap.h"
 #include "dicer.h"
+#include "led_mod.h"
 
 #define DEFAULT_IMPORTER EXECDIR "/xwax-import"
 
@@ -90,6 +91,7 @@ void loadSettings()
 	scsettings.brakespeed = 3000;
 	scsettings.pitchrange = 50;
 	scsettings.mididelay = 5;
+	scsettings.ledmodenabled = 0;
 
 	// Load any settings from config file
 	fp = fopen("/media/sda/scsettings.txt", "r");
@@ -133,6 +135,8 @@ void loadSettings()
 					scsettings.brakespeed = atoi(value);
 				else if (strcmp(param, "pitchrange") == 0)
 					scsettings.pitchrange = atoi(value);
+				else if (strcmp(param, "ledmodenabled") == 0)
+					scsettings.ledmodenabled = atoi(value);
 				else if (strstr(param, "midii") != NULL)
 				{
 					midiRemapped = 1;
@@ -440,7 +444,7 @@ int main(int argc, char *argv[])
 	}
 
 	// Start input processing thread
-
+	
 	SC_Input_Start();
 
 	// Start realtime stuff

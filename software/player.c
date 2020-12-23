@@ -539,3 +539,19 @@ void player_collect(struct player *pl, signed short *pcm, unsigned samples)
 
 	pl->volume = target_volume;
 }
+
+
+
+/* Returns the rotation angle as integer (0 .. 359).
+ *
+ * This is a helper method for the optinonal LED ring mod.
+ */
+double player_get_position_angle(struct player *pl)
+{
+	double rotations_per_second = (double)scsettings.platterspeed / 4096;
+	
+	double rotations = pl->position * rotations_per_second;
+	double rotation_relative = rotations - trunc(rotations);
+	
+	return rotation_relative * 360;
+}

@@ -25,6 +25,7 @@
 #include "rig.h"
 #include "track.h"
 #include "xwax.h"
+#include "led_mod.h"
 #include "sc_input.h"
 #include "sc_midimap.h"
 #include "dicer.h"
@@ -57,7 +58,7 @@ void i2c_read_address(int file_i2c, unsigned char address, unsigned char *result
 	*result = address;
 	if (write(file_i2c, result, 1) != 1)
 	{
-		printf("I2C read error\n");
+		printf("I2C write error\n");
 		exit(1);
 	}
 
@@ -815,6 +816,13 @@ void *SC_InputThread(void *ptr)
 
 	int secondCount = 0;
 
+	if (scsettings.ledmodenabled) 
+	{
+		// Enable optional LED mod
+		LED_Mod_Start();
+	}
+		
+
 	while (1)
 	{
 
@@ -830,7 +838,7 @@ void *SC_InputThread(void *ptr)
 				   frameCount, ADCs[0], ADCs[1], ADCs[2], ADCs[3], deck[1].encoderAngle,
 				   buttons[0], buttons[1], buttons[2], buttons[3], capIsTouched,
 				   deck[1].player.target_position, deck[1].player.position);
-
+	
 			//printf("\nFPS: %06u\n", frameCount);
 			frameCount = 0;
 

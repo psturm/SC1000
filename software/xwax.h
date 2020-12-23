@@ -77,6 +77,13 @@ typedef struct SC_SETTINGS {
 	int mididelay;
 
 
+    /* Optional mods */
+
+    // Enable the LED mod (send rotation angle to UART3)
+    // 1 when enabled, 0 when not
+    int ledmodenabled;
+
+
 } SC_SETTINGS;
 
 extern SC_SETTINGS scsettings;
