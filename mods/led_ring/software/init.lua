@@ -19,7 +19,8 @@ function init_real()
     uart.setup(uart_id, 115200, 8, uart.PARITY_NONE, uart.STOPBITS_1, echo)
     print ("[UART] Config", uart.getconfig(uart_id))
 
-    wifi.setmode(wifi.NULLMODE)
+    -- Init the wifi (and the HTTP server)
+    dofile("wifi.lua")
 end
 
 tmr.alarm(0, boot_delay*1000, 0, function() init_real() end)

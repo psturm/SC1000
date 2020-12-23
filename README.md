@@ -96,9 +96,6 @@ A video covering most of this information can be found at https://www.youtube.co
 * **Assemble the enclosure** - drill and tap M3 holes in the aluminium, and screw the whole enclosure together. Make sure the magnet at the end of the jogwheel bolt is suspended directly above the rotary sensor IC.
 
 
-
-
-
 ## Optional Mods ##
 
 * [LED mod](./mods/led_ring/README.md)

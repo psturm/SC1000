@@ -15,6 +15,7 @@ Or build and/or download your custom firmware:
 This project requires the following modules: `file gpio net node tmr uart ws2812`
 
 
+
 ## Flashing firmware
 
 Easiest way is to use the python-based [esptool](https://github.com/espressif/esptool).
